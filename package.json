@@ -1,5 +1,5 @@
 {
-  "name": "vmsangular",
+  "name": "VMSAngular",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -18,11 +18,26 @@
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
+    "@angular/material": "^5.0.0-rc.2",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/platform-server": "^5.0.5",
     "@angular/router": "^5.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.6",
+    "@types/jquery": "^3.2.16",
+    "angular-in-memory-web-api": "^0.5.1",
+    "angular-svg-round-progressbar": "^1.2.1",
+    "angular2-flash-messages": "^2.0.4",
     "core-js": "^2.4.1",
+    "ie-shim": "^0.1.0",
+    "jquery": "^3.2.1",
+    "ngprogress": "^1.1.1",
+    "ngx-progressbar": "^2.0.8",
+    "reflect-metadata": "^0.1.10",
+    "roboto-fontface": "^0.8.0",
     "rxjs": "^5.5.2",
+    "slick-carousel": "^1.8.1",
+    "svg-round-progressbar": "^1.0.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

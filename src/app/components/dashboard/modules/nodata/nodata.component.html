@@ -1,0 +1,238 @@
+
+        <!-- No Data -->
+        <!-- ################################################# -->
+        <div class="header">
+          <div class="row">
+
+            <!-- To Do Hire -->
+            <div class="dashboard__module dashboard__module--todos col-lg-6 text-left">
+              <h1>To Do &ndash; Hire</h1>
+              <div class="todos">
+                  <div class="todo todo--empty">
+                    <div class="todo__content">You're all caught up.</div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="dashboard__module dashboard__module--todos col-lg-6 text-left">
+              <h1>To Do &ndash; Manage</h1>
+              <div class="todos">
+                  <div class="todo todo--empty">
+                    <div class="todo__content">You're all caught up.</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row--mobile-no-gutters">
+            <div class="dashboard__module notifications col-md-12 text-left">
+              <h1>Notifications</h1>
+              <div class="list__container list__container--empty">
+                <div class="list__header">
+                  <div class="header-sort name-desc" data-sort-dir="down">
+                    <span>Column Title</span>
+                  </div>
+                  <div class="header-sort time">
+                    <span>Date + Time</span>
+                  </div>
+                </div>
+                <ul class="dashboard-list">
+
+                  <li class="list-item list-item--empty">You're all caught up</li>
+
+                </ul>
+                <div class="list__count hidden-lg-up">
+                  <span class="list__count-current">1</span> /
+                  <span class="list__count-total">0</span>
+                </div>      </div>
+            </div>
+          </div>
+
+            <div class="row row--mobile-no-gutters">
+              <div class="dashboard__module interviews col-md-12 text-left">
+                <h1>Interviews</h1>
+                <div class="list__container list__container--empty">
+                  <div class="list__header" data-sort="alpha">
+                    <div class="header-sort candidate" data-sort-dir="down">
+                      <span>Candidate</span>
+                    </div>
+                    <div class="header-sort requisition">
+                      <span>Requisition</span>
+                    </div>
+                    <div class="header-sort time">
+                      <span>Date + Time</span>
+                    </div>
+                    <div class="header-sort status">
+                      <span>Status</span>
+                    </div>
+                  </div>
+
+                  <script type="text/javascript">function onAtcClick(e) { window.onCalIconClick(e) }</script>
+
+                  <ul class="dashboard-list">
+                      <li class="list-item list-item--empty">No interviews scheduled right now.</li>
+
+                  </ul>
+                  <div class="list__count hidden-lg-up">
+                    <span class="list__count-current">1</span> /
+                    <span class="list__count-total">0</span>
+                  </div>        </div>
+              </div>
+            </div>
+
+            <div class="row row--mobile-no-gutters">
+              <div class="dashboard__module calendar col-md-12 text-left">
+
+                <div class="calendar-select is-desktop">
+                  <select class="calendar-month-select mdb-select">
+                    <option value="" disabled selected></option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+
+                <div class="calendar-select month is-mobile">
+                  <select class="calendar-month-select">
+                    <option value="" disabled selected></option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <span class="caret"></span>
+                </div>
+
+                <div class="calendar-select is-desktop">
+                  <select class="calendar-year-select mdb-select">
+                    <option value="" disabled selected></option>
+                    <option value="1">2015</option>
+                    <option value="2">2016</option>
+                    <option value="3">2017</option>
+                    <option value="4">2018</option>
+                    <option value="5">2019</option>
+                    <option value="6">2020</option>
+                    <option value="7">2021</option>
+                  </select>
+                </div>
+
+                <div class="calendar-select year is-mobile">
+                  <select class="calendar-year-select">
+                    <option value="" disabled selected></option>
+                    <option value="1">2015</option>
+                    <option value="2">2016</option>
+                    <option value="3">2017</option>
+                    <option value="4">2018</option>
+                    <option value="5">2019</option>
+                    <option value="6">2020</option>
+                    <option value="7">2021</option>
+                  </select>
+                  <span class="caret"></span>
+                </div>
+
+                <div id="dashboard-calendar">
+                  <div class="calendar-container">
+                    <div id="clndr-grid" class="clndr-grid">
+                      <!-- will get day's events from dashboard-calendar-template-->
+                    </div>
+                    <div id="clndr-day" class="list__container">
+                      <!-- will get day's events from single-day-template -->
+                    </div>
+                    <!-- extra calendars used for sliding between months, never visible -->
+                    <div id="clndr-last-month-grid" class="hidden-cal-grid"></div>
+                  </div>
+                </div>
+
+                <script id="single-day-template" type="text/template">
+                  <div class="list__header">
+                    <span><%= date %></span>
+                  </div>
+                  <% if (events.length) { %>
+                    <ul class="dashboard-list">
+                      <% _.each(events, function (event) { %>
+                        <li class="list-item">
+                          <div class="event-type"><%= event.eventType %></div>
+                          <div class="event-name title"><%= event.name %></div>
+                          <div class="event-time"><%= event.time %></div>
+                        </li>
+                      <% }); %>
+                    </ul>
+                  <% } else { %>
+                    <div class="no-events">No interviews and no jobs starting or ending today.</div>
+                  <% }; %>
+                </script>
+
+                <script id="dashboard-calendar-template" type="text/template">
+                  <div class="days-of-the-week">
+                  <% _.each(daysOfTheWeek, function (day) { %>
+                    <div class="header-day"><%= day %></div>
+                  <% }); %>
+                  </div>
+                  <div class="days">
+                    <div class="week">
+                    <% _.each(days, function (day, index) { var closeWeek = (index + 1) % 7 === 0 && index < 41 %>
+                      <div class="<%= day.classes %>">
+                        <div class="day-square">
+                          <span class="day-text"><%= day.day %></span>
+                        </div>
+                      </div>
+                    <% if (closeWeek) { %>
+                    </div><div class="week">
+                    <% } %>
+                    <% }); %>
+                    </div>
+                  </div>
+                </script>
+
+              </div>
+            </div>
+
+            <div class="row row--mobile-no-gutters">
+              <div class="dashboard__module utilities col-lg-6 text-left">
+                <h1>Utilities</h1>
+                <div class="list__container list__container--empty">
+                  <div class="list__header">
+                    <div class="header-sort" data-sort-dir="down">
+                      <span data-sort-text="down">Alphabetical (A &mdash; Z)</span>
+                      <span data-sort-text="up" style="display: none">Alphabetical (Z &mdash; A)</span>
+                    </div>
+                  </div>
+                  <ul class="dashboard-list">
+                      <div class="list-item list-item--empty">No files shared yet.</div>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="dashboard__module documents col-lg-6 text-left">
+                <h1>Documents</h1>
+                <div class="list__container list__container--empty">
+                  <div class="list__header">
+                    <div class="header-sort" data-sort-dir="down">
+                      <span data-sort-text="down">Alphabetical (A &mdash; Z)</span>
+                      <span data-sort-text="up" style="display: none">Alphabetical (Z &mdash; A)</span>
+                    </div>
+                  </div>
+                  <ul class="dashboard-list">
+                      <div class="list-item list-item--empty">No files shared yet.</div>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>

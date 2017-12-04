@@ -1,20 +1,95 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+	<!-- AppComponents Router
+    ################################################# -->
+    <body class="{{bodyRef}}">
 
+            <div class="dev-grid container-fluid">
+              <div class="row">
+                <div class="col-sm-1"><div class="content">Here</div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+                <div class="col-sm-1"><div class="content"></div></div>
+              </div>
+            </div>
+
+            <!-- Page Load Progress -->
+              <ng-progress
+              [positionUsing]="'marginLeft'"
+              [direction]="'leftToRightIncreased'"
+              [color]="'#ffffff'"
+              [trickleSpeed]="500"
+              [thick]="true"
+              [ease]="'easeInSine'"></ng-progress>
+
+            <!-- Flash Messaging -->
+
+            <flash-messages></flash-messages>
+            <!-- Router Outlet -->
+            <router-outlet></router-outlet>
+
+            <!-- JavaScript Dependencies
+            ################################################# -->
+
+            <!-- Login -->
+            <script type="text/javascript" src="../assets/js/scripts.js"></script>
+            <script type="text/javascript" src="../assets/js/login/index.js"></script>
+            <script type="text/javascript" src="../assets/js/lang-select.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/mdb.min.js"></script>
+
+            <!-- Required by everything below -->
+            <script type="text/javascript" src="../assets/js/common.js"></script>
+            <script type="text/javascript" src="../assets/js/utils.js"></script>
+            <script type="text/javascript" src="../assets/js/index.js"></script>
+            <script type="text/javascript" src="../assets/js/nav-bar.js"></script>
+            <script type="text/javascript" src="../assets/js/banner.js"></script>
+
+            <!-- Dashboard -->
+            <script type="text/javascript" src="../assets/js/dashboard/index.js"></script>
+            <script type="text/javascript" src="../assets/js/dashboard/calendar.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment-timezone-with-data-2012-2022.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/clndr.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/jquery.touchSwipe.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/addtocalendar.js"></script>
+
+
+            <!-- Job Record Hire -->
+            <script type="text/javascript" src="../assets/js/job-record/index.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment-timezone-with-data-2012-2022.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/clndr.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/rangeslider.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/dataTables.fixedColumns.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/dataTables.colReorder.js"></script>
+            <script type="text/javascript" src="../assets/js/popups.js"></script>
+            <script type="text/javascript" src="../assets/js/accelerationTables.js"></script>
+
+
+            <!-- List Name/List -->
+            <script type="text/javascript" src="../assets/js/lists/index.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/moment-timezone-with-data-2012-2022.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/clndr.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/dataTables.fixedColumns.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/dataTables.colReorder.js"></script>
+            <script type="text/javascript" src="../assets/js/lists/list-controls.js"></script>
+            <script type="text/javascript" src="../assets/js/popups.js"></script>
+            <script type="text/javascript" src="../assets/js/accelerationTables.js"></script>
+
+
+            <!-- Required by everything above -->
+            <script type="text/javascript" src="../assets/js/vendor/mdb.min.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/perfect-scrollbar.jquery.js"></script>
+            <script type="text/javascript" src="../assets/js/vendor/slick.min.js"></script>
+
+
+          </body>

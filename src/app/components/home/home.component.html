@@ -1,0 +1,69 @@
+      <!-- Home
+      ################################################# -->
+      <div style="padding: 40px">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="./assets/img/accel-logo-teal.svg" alt="Acceleration Suite" class="accel-logo" />
+
+            <div>
+              <div *ngIf="getLogin">
+                <h3 *ngIf="getLogin"><a href="javascript:void(0)" (click)="onLogoutClick()"><i class="fa fa-power-off"></i> Logout</a></h3>
+              </div>
+              <p>&nbsp;</p>
+              <h2>Templates</h2>
+
+              <h3><a routerLink="/roleselect">Login &#8250; Role Select</a></h3>
+              <h3><a routerLink="/register">Login &#8250; Register</a></h3>
+              <h3><a routerLink="/loginuser" (click)="getURLLink">Login &#8250; Client Login</a></h3>
+              <h3><a routerLink="/invalidinput">Login &#8250; Invalid Inputs (WIP)</a></h3>
+              <h3><a routerLink="/forgotusrname">Login &#8250; Forgot Username</a></h3>
+              <h3><a routerLink="/forgotusrnmresp">Login &#8250; Forgot Username Response</a></h3>
+              <h3><a routerLink="/forgotpw">Login &#8250; Forgot Password</a></h3>
+              <h3><a routerLink="/forgotpwresp">Login &#8250; Forgot Password Response</a></h3>
+              <h3><a routerLink="/secquestions">Login &#8250; Security Questions</a></h3>
+              <h3><a routerLink="/initlogin">Login &#8250; First Time</a></h3>
+
+              <hr>
+              <h3><a routerLink="/dashboard/data">Dashboard</a></h3>
+              <h3><a routerLink="/dashboard/nodata">Dashboard &#8250; No Results</a></h3>
+
+              <hr>
+              <h3><a routerLink="/dashboard/list">Lists</a></h3>
+              <h3><a routerLink="/dashboard/listnames">Lists &#8250; Name First Column</a></h3>
+
+              <hr>
+              <h3><a routerLink="/dashboard/jobrecordhire">Job Record &#8250; Hire</a></h3>
+
+              <hr>
+              <h3>People Record</h3>
+              <h3>Add / Submit a Candidate</h3>
+              <h3>Interviews</h3>
+              <h3>Project Record</h3>
+              <h3>Submit Project Proposal</h3>
+              <h3>Time and Expense Record and Entry</h3>
+              <h3>Invoice Record</h3>
+              <h3>Search and Results</h3>
+              <h3>Account and Notification Preferences</h3>
+              <h3>Form Library</h3>
+
+
+              <h2 style="margin-top: 50px;">Reference</h2>
+              <h3><a routerLink="/404">Job Record &#8250; 404 Page Not Found</a></h3>
+
+              <hr>
+              <h3><a routerLink="/gridlayout">Grid Example</a></h3>
+              <h3>
+                <a href="https://mdbootstrap.com/components/" target="_blank">
+                  Bootstrap Material Design Elements <i class="material-icons">launch</i>
+                </a>
+              </h3>
+              <h3>
+                <a href="https://material.io/icons/" target="_blank">
+                  Material Design Icons <i class="material-icons">launch</i>
+                </a>
+              </h3>
+
+            </div>
+          </div>
+        </div>
+      </div>

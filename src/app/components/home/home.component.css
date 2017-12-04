@@ -1,0 +1,18 @@
+body {
+  padding: 20px;
+}
+a, a:hover, a:visited {
+  color: #97BFBF;
+  font-size: 24;
+}
+a:hover {
+  text-decoration: underline;
+}
+hr {
+  background: white;
+  border-color: white;
+}
+.accel-logo {
+  margin: 20px 0 30px 0;
+  max-width: 250px;
+}
