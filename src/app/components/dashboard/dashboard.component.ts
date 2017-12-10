@@ -18,8 +18,8 @@ export class DashboardComponent implements OnInit {
       'indexJS',
       'nav-barJS',
       'bannerJS',
-      'dashIndexJS',
-      'dashCalJS',
+  //    'dashIndexJS',
+ //     'dashCalJS',
       'vendorMomentMinJS',
       'vendorMomentTZJS',
       'vendorCalJS',
@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
       'mdb-minJS',
       'vendorPerfScrollbarJS',
       'vendorSlickMinJS')
+
       .then(data => {
       console.log('script loaded ', data);
     }).catch(error => console.log(error));

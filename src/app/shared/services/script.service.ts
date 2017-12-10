@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
-import { ScriptStore } from '../configures/scrtipt.store';
+import { ScriptStore } from '../configurations/scrtipt.store';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 declare var document: any;
 
@@ -7,7 +9,7 @@ declare var document: any;
 export class ScriptService {
 
 private scripts: any = {};
-
+private scripts1: Array<ScriptModel> = []; //{ScriptModel}[] = [];
 constructor() {
     ScriptStore.forEach((script: any) => {
         this.scripts[script.name] = {
@@ -53,4 +55,47 @@ loadScript(name: string) {
     });
 }
 
+
+public  load1(script: ScriptModel): Observable<ScriptModel> {
+  const result = new Observable<ScriptModel>(( observer: Observer<ScriptModel> ) => {
+      const existingScript = this.scripts1.find(s => s.name === script.name);
+
+      // Complete if already loaded
+      if (existingScript && existingScript.loaded) {
+          observer.next(existingScript);
+          observer.complete();
+      }else {
+          // Add the script
+          this.scripts1 = [...this.scripts1, script];
+
+          // Load the script
+          const scriptElement = document.createElement('script');
+          scriptElement.type = 'text/javascript';
+          scriptElement.src = script.src;
+
+          scriptElement.onload = () => {
+              script.loaded = true;
+              observer.next(script);
+              observer.complete();
+          };
+
+          scriptElement.onerror = (error: any) => {
+              observer.error('Couldn\'t load script ' + script.src);
+          };
+
+          document.getElementsByTagName('body')[0].appendChild(scriptElement);
+      }
+  });
+
+
+  return result;
+}
+
+
+}
+
+export class ScriptModel {
+  name: string;
+  src: string;
+  loaded: boolean;
 }
