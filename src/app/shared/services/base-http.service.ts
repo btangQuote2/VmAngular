@@ -120,7 +120,7 @@ return this._http.post(url, payload, options)
    private static addJsonHeaders(headers: Headers) {
      headers.append('Content-type', 'application/json');
      headers.append('Accept', 'application/json');
-     headers.append('Access-Control-Allow_-Origin', '*');
+     headers.append('Access-Control-Allow-Origin', '*');
    }
 
    // tslint:disable-next-line:member-ordering

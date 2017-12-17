@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { BaseHttpService } from '../base-http.service';
 import { environment } from '../../../../environments/environment';
-
+import { apiRoutes } from '../../configurations/api-routes.configuration';
+import { AuthorizationResponse } from '../../../models/response/authorization-response';
 @Injectable()
 export class AuthorizationService extends BaseHttpService {
 
@@ -23,11 +24,9 @@ export class AuthorizationService extends BaseHttpService {
     },
     error => {
 console.log('error');
-    },
-    complete => {
-      console.log ('Done');
     }
-  )
+
+  );
 
    }
 }

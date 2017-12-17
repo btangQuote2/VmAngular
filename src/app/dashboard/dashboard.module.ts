@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 // Services
-import {ScriptService} from '../../shared/services/script.service';
+import {ScriptService} from '../shared/services/script.service';
 // Routes//
 export const ROUTES: Routes = [
   { path: '',

@@ -1,0 +1,44 @@
+<div class="login-component d-flex align-items-center">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 login-fields">
+              <form novalidate [formGroup]="loginForm" (ngSubmit)="login(loginForm)" class="paragraph-regular">
+                  <div class="text-center">
+                      <img src="../../assets/images/brand/0.png"/>
+                  </div>
+                  <p class="login-description text-center">Welcome to eSUB. Please sign in to your account</p>
+                  <div class="form-inputs">
+                      <md-input-container class="full-width">
+                          <input id="txtUsername" name="username" type="text" mdInput placeholder="Enter email" formControlName="username"
+                          (blur)="blurValidator(loginForm.get('username'))">
+                      </md-input-container>
+                      <md-input-container class="full-width">
+                          <input id="txtPassword" name="password" type="password" mdInput placeholder="Enter password" formControlName="password"
+                                 (blur)="blurValidator(loginForm.get('password'))">
+                      </md-input-container>
+
+                  </div>
+                  <div class="form-error text-center">
+                      <span id="errorMessage" *ngIf="loginForm.invalid && !loginForm.pristine">{{errorMessage}}</span>
+                  </div>
+                  <button id="btnLogin" type="submit" class="btn btn-primary btn-block btn-lg text-center" [disabled]="loginForm.invalid" >
+                      <div *ngIf="!loading" class="login-button-text">Sign in</div>
+                      <div *ngIf="loading" class="login-button-spinner">
+                          <md-progress-spinner
+                              class="example-margin"
+                              [color]="'primary'"
+                              [mode]="'indeterminate'"
+                              strokeWidth="16">
+                          </md-progress-spinner>
+                      </div>
+                  </button>
+              </form>
+
+              <!--<p>-->
+              <!--<a ui-sref="esub.public.resetpassword-email">Forgot your password?</a>-->
+              <!--</p>-->
+          </div>
+      </div>
+  </div>
+
+</div>
