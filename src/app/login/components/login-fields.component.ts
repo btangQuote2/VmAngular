@@ -10,7 +10,8 @@ import { error } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-vms-login-fields',
-  templateUrl: './login-fields.component.html'
+  templateUrl: './login-fields.component.html',
+  styleUrls: ['./login-fields.component.css']
 })
 export class LoginFieldsComponent {
   private _usernameControl;

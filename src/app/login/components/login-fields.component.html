@@ -4,48 +4,62 @@
       <div class="row">
         <div class="login-fields" style="margin-top:190px">
           <form novalidate [formGroup]="loginForm" (ngSubmit)="login(loginForm)" class="paragraph-regular">
-            <div class="text-center" >
-              <!-- <img src="../../../assets/images/brand/0.png" /> -->
+            <div class="text-center">
+              <a href="/">
+                <img src="./assets/img/accel-logo-off-white.svg" alt="AccelerationVMS">
+              </a>
             </div>
+            <br/>
+            <br/>
             <h3 class="login-description text-center" style="margin-left:370px">Welcome to Agile1 VMS. Please sign in to your account</h3>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <div class="form-inputs"  style="margin-left:370px">
-              Enter email
-                <input id="txtUsername" style="color: white" name="username" type="text" mdInput placeholder="Enter email" formControlName="username" (blur)="blurHandler(loginForm.get('username'))">
 
-             <br/>
-             <br/>
-             <br/>
-             <br/>
-             Enter password
+
+            <div class="form-inputs" style="margin-left:370px">
+
+              <input id="txtUsername" name="username" type="text" mdInput placeholder="Enter email" formControlName="username" (blur)="blurHandler(loginForm.get('username'))">
+
+              <br/>
+              <br/>
+              <br/>
+
+
               <input id="txtPassword" name="password" type="password" mdInput placeholder="Enter password" formControlName="password" (blur)="blurHandler(loginForm.get('password'))">
 
             </div>
-            <div class="form-error text-center" >
+            <div class="form-error text-center">
               <span id="errorMessage" *ngIf="loginForm.invalid && !loginForm.pristine">{{errorMessage}}</span>
             </div>
 
             <br/>
             <br/>
             <br/>
-            <button style="margin-left:370px; width:150px" id="btnLogin" type="submit" class="btn btn-primary btn-enabled btn-block btn-lg text-center" [disabled]="loginForm.invalid">
+            <button style="margin-left:370px; width:150px" id="btnLogin" type="submit" class="btn btn-primary btn-enabled btn-block btn-lg text-center"
+              [disabled]="loginForm.invalid">
               <div *ngIf="!loading" class="login-button-text">Sign in</div>
               <div *ngIf="loading" class="login-button-spinner">
                 <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" strokeWidth="16">
                 </mat-progress-spinner>
               </div>
             </button>
+            <div class="col-md-12 text-center login-links">
+              <a routerLink="/forgot-password">Forgot your password?</a>
+            </div>
           </form>
         </div>
       </div>
-      <!--<div class="row">-->
-      <!--<div class="col-md-12 text-center login-links">-->
-      <!--<a routerLink="/forgot-password" >Forgot your password?</a>-->
-      <!--</div>-->
-      <!--</div>-->
+      <div class="row">
+
+      </div>
     </div>
   </div>
-</div>
+
+
+
+  <br>
+  <br>
+  <br>
+  <div class="col-md-12 mhc-copyright mhc-block pull-right">
+    &copy; 2001 &mdash; 2017 AgileOne All Rights Reserved Powered by AgileOne v8.7.1.0
+  </div>
