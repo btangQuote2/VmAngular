@@ -17,6 +17,8 @@ import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messa
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { MatInputModule, MatChipsModule, MatProgressBarModule } from '@angular/material';
+// import { BaseComponent } from './shared/components/base.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,16 +36,18 @@ import { MatInputModule, MatChipsModule, MatProgressBarModule } from '@angular/m
     FlashMessagesModule,
     MatInputModule,
     MatChipsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    SharedModule
     //  ,
     // RouterModule.forRoot(ROUTES)
   ],
-  exports: [NgProgressModule, AuthenticationService],
+  exports: [NgProgressModule],
   entryComponents: [],
   providers: [
     ScriptService,
     FlashMessagesService,
-    { provide: BrowserXhr, useClass: NgProgressBrowserXhr }
+    { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

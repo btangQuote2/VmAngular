@@ -13,6 +13,10 @@ export const AppRoutes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
 //   {
 //     path: 'roleselect',
 //     loadChildren: './components/login/roleselect/roleselect.module#RoleSelectModule'

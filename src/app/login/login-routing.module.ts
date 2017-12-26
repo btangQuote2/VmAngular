@@ -7,11 +7,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 export const LoginRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginFieldsComponent },
-  { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+//  { path: 'reset-password', component: ResetPasswordComponent },
+//  { path: 'forgot-password', component: ForgotPasswordComponent },
 ];
 
-export const LoginRoutesModule = RouterModule.forChild(LoginRoutes);
+export const LoginRoutingModule = RouterModule.forChild(LoginRoutes);
 export const routedLoginComponents = [
   LoginComponent,
   LoginFieldsComponent,

@@ -8,8 +8,11 @@ import { Credentials } from './../../models/domain/credentials';
 import { emailValidator } from '../../shared/validators/email-validator';
 import { error } from 'selenium-webdriver';
 
+@Component({
+  selector: 'app-vms-login-fields',
+  templateUrl: './login-fields.component.html'
+})
 export class LoginFieldsComponent {
-  // Private
   private _usernameControl;
   private _passwordControl;
 
@@ -40,16 +43,16 @@ export class LoginFieldsComponent {
       data => {
         sessionStorage.setItem('authentication', JSON.stringify(data));
         if (this._authenticationService.isLoggedIn()) {
-          this._route.queryParams.map(qp => qp['redirectTo']).subscribe(
-            redirectTo => {
+          this._route.queryParams
+            .map(qp => qp['redirectTo'])
+            .subscribe(redirectTo => {
               // this.loading = false;
               const url = redirectTo ? [redirectTo] : ['company'];
               // console.log('login redirect url', url);
               this._router.navigate(url);
-            }
-          );
+            });
         }
-      },
+      }
       // error => {
       //   this.errorMessage = error;
       //   this.loading = false;
@@ -85,11 +88,11 @@ export class LoginFieldsComponent {
 
   private trackUsernameChanges() {
     this._usernameControl = this.loginForm.get('username');
-    this._usernameControl.valueChange.forEach((value: string) => {
-      if (this.errorMessage) {
-        this.resetErrors(this._usernameControl);
-      }
-    });
+    // this._usernameControl.valueChange.forEach((value: string) => {
+    //   if (this.errorMessage) {
+    //     this.resetErrors(this._usernameControl);
+    //   }
+    // });
   }
 
   private trackPasswordChanges() {

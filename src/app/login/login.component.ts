@@ -5,8 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'vms-login',
+  selector: 'app-vms-login',
   template: `<router-outlet></router-outlet>`
 })
 
