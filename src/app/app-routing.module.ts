@@ -61,7 +61,7 @@ export const AppRoutes: Routes = [
       path: 'dashboard',
     //  component: DashboardComponent,
     //  pathMatch: 'full'
-     loadChildren: './dashboard/dashboard.module#DashboardModule'
+     loadChildren: './home/dashboard/dashboard.module#DashboardModule'
    }
 //   {
 //     path: 'gridlayout',

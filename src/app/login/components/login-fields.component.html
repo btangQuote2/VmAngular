@@ -17,32 +17,35 @@
 
 
             <div class="form-inputs" style="margin-left:370px">
-
-              <input id="txtUsername" name="username" type="text" mdInput placeholder="Enter email" formControlName="username" (blur)="blurHandler(loginForm.get('username'))">
-
+              <!-- <mat-form-field class="example-full-width"> -->
+              <input id="txtUsername" name="username" type="text" matInput placeholder="Username" formControlName="username" (blur)="blurHandler(loginForm.get('username'))">
+            <!-- </mat-form-field> -->
               <br/>
               <br/>
               <br/>
 
 
-              <input id="txtPassword" name="password" type="password" mdInput placeholder="Enter password" formControlName="password" (blur)="blurHandler(loginForm.get('password'))">
+              <input id="txtPassword" name="password" type="password" matInput placeholder="Password" formControlName="password" (blur)="blurHandler(loginForm.get('password'))">
 
             </div>
-            <div class="form-error text-center">
-              <span id="errorMessage" *ngIf="loginForm.invalid && !loginForm.pristine">{{errorMessage}}</span>
+
+
+            <br>
+            <div class="form-error" style="margin-left:370px;">
+              <span id="errorMessage"  *ngIf="loginForm.invalid && !loginForm.pristine">{{errorMessage}}</span>
             </div>
 
             <br/>
-            <br/>
-            <br/>
-            <button style="margin-left:370px; width:150px" id="btnLogin" type="submit" class="btn btn-primary btn-enabled btn-block btn-lg text-center"
+            <button style="margin-left:370px; width:170px" id="btnLogin" type="submit" class="btn btn-primary btn-enabled btn-block btn-lg text-center"
               [disabled]="loginForm.invalid">
-              <div *ngIf="!loading" class="login-button-text">Sign in</div>
-              <div *ngIf="loading" class="login-button-spinner">
-                <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" strokeWidth="16">
+              Sign in
+              <!-- <div *ngIf="!loading" class="login-button-text"></div> -->
+              <!-- <div *ngIf="loading" class="login-button-spinner">
+                <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" strokeWidth="1">
                 </mat-progress-spinner>
-              </div>
+              </div> -->
             </button>
+            <br>
             <div class="col-md-12 text-center login-links">
               <a routerLink="/forgot-password">Forgot your password?</a>
             </div>
@@ -60,6 +63,6 @@
   <br>
   <br>
   <br>
-  <div class="col-md-12 mhc-copyright mhc-block pull-right">
+  <div class="page-login__copyright">
     &copy; 2001 &mdash; 2017 AgileOne All Rights Reserved Powered by AgileOne v8.7.1.0
   </div>

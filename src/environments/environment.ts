@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  apiUrl: 'http://api.develop.com/',
+  apiUrl: 'https://www.agile1.us/api',
   webUrl: ''
 };

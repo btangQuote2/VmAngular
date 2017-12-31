@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  padding: 0px;
 }
 a, a:hover, a:visited {
   color: #97BFBF;
@@ -9,10 +9,11 @@ a:hover {
   text-decoration: underline;
 }
 hr {
-  background: white;
-  border-color: white;
+  background: red;
+  border-color: red;
 }
 .accel-logo {
-  margin: 20px 0 30px 0;
+  margin: 0px 0 0px 0;
   max-width: 250px;
+ max-height: 30px;
 }

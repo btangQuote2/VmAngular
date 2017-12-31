@@ -1,3 +1,5 @@
+import { HomeModule } from './home/home.module';
+import { DashboardModule } from './home/dashboard/dashboard.module';
 import { AuthenticationService } from './shared/services/authentication/authentication.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,14 +14,15 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ScriptService } from './shared/services/script.service';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { MatInputModule, MatChipsModule, MatProgressBarModule } from '@angular/material';
 // import { BaseComponent } from './shared/components/base.component';
 import { SharedModule } from './shared/shared.module';
-
+import { NetworkErrorHandler } from './shared/services/network-error-handler';
+import {ToastrModule} from 'ngx-toastr';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -37,7 +40,10 @@ import { SharedModule } from './shared/shared.module';
     MatInputModule,
     MatChipsModule,
     MatProgressBarModule,
-    SharedModule
+    SharedModule,
+    DashboardModule,
+    HomeModule,
+    ToastrModule.forRoot()
     //  ,
     // RouterModule.forRoot(ROUTES)
   ],
@@ -47,7 +53,8 @@ import { SharedModule } from './shared/shared.module';
     ScriptService,
     FlashMessagesService,
     { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
-    AuthenticationService
+    AuthenticationService,
+    NetworkErrorHandler
   ],
   bootstrap: [AppComponent]
 })

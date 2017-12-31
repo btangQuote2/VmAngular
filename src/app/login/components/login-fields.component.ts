@@ -14,6 +14,7 @@ import { error } from 'selenium-webdriver';
   styleUrls: ['./login-fields.component.css']
 })
 export class LoginFieldsComponent {
+  // private
   private _usernameControl;
   private _passwordControl;
 
@@ -41,25 +42,29 @@ export class LoginFieldsComponent {
   login({ value, valid }: { value: Credentials; valid: boolean }) {
     this.loading = true;
     this._authenticationService.login(value.username, value.password).subscribe(
-      data => {
+      (data: AuthenticationService) => {
         sessionStorage.setItem('authentication', JSON.stringify(data));
         if (this._authenticationService.isLoggedIn()) {
           this._route.queryParams
             .map(qp => qp['redirectTo'])
             .subscribe(redirectTo => {
               // this.loading = false;
-              const url = redirectTo ? [redirectTo] : ['company'];
+              const url = redirectTo ? [redirectTo] : ['dashboard/data'];
               // console.log('login redirect url', url);
               this._router.navigate(url);
             });
         }
+      },
+      // tslint:disable-next-line:no-shadowed-variable
+      (error: any) => {
+        if (error) {
+          this.errorMessage =
+            'Username or Password is NOT correct, please enter again';
+        }
+        this.loading = false;
+        this._usernameControl.setErrors({ invalid: true });
+        this._passwordControl.setErrors({ invalid: true });
       }
-      // error => {
-      //   this.errorMessage = error;
-      //   this.loading = false;
-      //   this._usernameControl.setErrors({ invalid: true });
-      //   this._passwordControl.setErrors({ invalid: true });
-      // }
     );
   }
 
@@ -80,10 +85,10 @@ export class LoginFieldsComponent {
     this.loginForm = this._builder.group({
       username: [
         '',
-        [Validators.required, Validators.minLength(5), emailValidator()]
+        [Validators.required] // , Validators.minLength(5), emailValidator()
       ],
 
-      password: ['', [Validators.required, Validators.minLength(5)]]
+      password: ['', [Validators.required]] // , Validators.minLength(5)
     });
   }
 

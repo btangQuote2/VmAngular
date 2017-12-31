@@ -1,7 +1,7 @@
 export const apiRoutes = {
-  'authentication': 'Identity/Token',
-  'authorization': 'Identity/Authorization'
-}
+  'authentication': '/token',
+  'authorization': '/Authorization'
+};
 
 export const externalApiRoutes = {
   'geocode': 'geocode/json'

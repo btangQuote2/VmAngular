@@ -10,17 +10,19 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 // Services
-import {ScriptService} from '../shared/services/script.service';
+import {ScriptService} from '../../shared/services/script.service';
+import { HomeModule } from '../home.module';
 // Routes//
 export const ROUTES: Routes = [
   { path: '',
     data: {
         title: 'Dashboard page',
-        urls: [{title: 'Acceleration | VMS Dashboard', url: '/'}, { title: 'Dashboard'}, { title: 'Dashboard page'}]
+        urls: [{title: 'Acceleration | VMS Dashboard', url: '/dashboard/data'}, { title: 'Dashboard'}, { title: 'Dashboard page'}]
       },
     component: DashboardComponent,
       children:
       [
+        { path: 'sidebar', loadChildren: './sidebar/sidebar.module#SidebarModule' },
         { path: 'data', loadChildren: './modules/data/data.module#DataModule' },
         { path: 'nodata', loadChildren: './modules/nodata/nodata.module#NoDataModule' },
         { path: 'list', loadChildren: './modules/list/list.module#ListModule' },
@@ -37,7 +39,7 @@ export const ROUTES: Routes = [
    HeaderComponent,
    FooterComponent
   ],
-  imports: [ RouterModule.forChild(ROUTES) ],
+  imports: [ HomeModule, RouterModule.forChild(ROUTES) ],
   providers: [
     ScriptService, FlashMessagesService
   ]

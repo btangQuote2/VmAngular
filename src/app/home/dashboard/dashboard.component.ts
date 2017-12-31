@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ScriptService } from '../shared/services/script.service';
+import { ScriptService } from '../../shared/services/script.service';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

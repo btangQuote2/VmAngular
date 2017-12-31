@@ -4,31 +4,36 @@ import { BaseHttpService } from '../base-http.service';
 import { Http } from '@angular/http';
 import { AuthorizationService } from '../authorization/authorization.service';
 import { apiRoutes } from '../../configurations/api-routes.configuration';
+
+import { NetworkErrorHandler } from '../network-error-handler';
 @Injectable()
 export class AuthenticationService extends BaseHttpService {
   constructor(
     private _httpPassthrough: Http,
-    private _authorizationService: AuthorizationService
+    protected _errorHandler: NetworkErrorHandler
   ) {
-    super(_httpPassthrough);
+    super(_httpPassthrough, _errorHandler);
   }
 
   public login(username: string, password: string) {
     const url = environment.apiUrl + apiRoutes.authentication;
+
     const payload = {
-      grant_type: 'password',
-      username: username,
-      password: password
+      clientId: 'default',
+      userName: username, // 'gchan',
+      password: password, // '1',
+      who: 'ClientUser'
     };
 
-    return super.postForm(url, payload);
+    const result = super.post(url, payload);
+    return result;
   }
 
   public isLoggedIn(): boolean {
     const authenticationData = JSON.parse(
       sessionStorage.getItem('authentication')
     );
-    if (authenticationData && authenticationData.access_token) {
+    if (authenticationData && authenticationData.token) {
       return true;
     }
     return false;
