@@ -20,11 +20,11 @@ export const ROUTES: Routes = [
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
        }
-       ,
-      {
-        path: 'sidebar',
-        loadChildren: 'dashboard/sidebar/sidebar.module#SidebarModule'
-      }
+      //  ,
+      // {
+      //   path: 'sidebar',
+      //   loadChildren: 'dashboard/sidebar/sidebar.module#SidebarModule'
+      // }
     ]
   }
 ];

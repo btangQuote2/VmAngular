@@ -22,7 +22,6 @@ export const ROUTES: Routes = [
     component: DashboardComponent,
       children:
       [
-        { path: 'sidebar', loadChildren: './sidebar/sidebar.module#SidebarModule' },
         { path: 'data', loadChildren: './modules/data/data.module#DataModule' },
         { path: 'nodata', loadChildren: './modules/nodata/nodata.module#NoDataModule' },
         { path: 'list', loadChildren: './modules/list/list.module#ListModule' },
