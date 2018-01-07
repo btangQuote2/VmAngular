@@ -10,38 +10,25 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 // Services
-import {ScriptService} from '../../shared/services/script.service';
+import { ScriptService } from '../../shared/services/script.service';
 import { HomeModule } from '../home.module';
-// Routes//
-export const ROUTES: Routes = [
-  { path: '',
-    data: {
-        title: 'Dashboard page',
-        urls: [{title: 'Acceleration | VMS Dashboard', url: '/dashboard/data'}, { title: 'Dashboard'}, { title: 'Dashboard page'}]
-      },
-    component: DashboardComponent,
-      children:
-      [
-        { path: 'data', loadChildren: './modules/data/data.module#DataModule' },
-        { path: 'nodata', loadChildren: './modules/nodata/nodata.module#NoDataModule' },
-        { path: 'list', loadChildren: './modules/list/list.module#ListModule' },
-        { path: 'listnames', loadChildren: './modules/listnames/listnames.module#ListNamesModule' },
-        { path: 'jobrecordhire', loadChildren: './modules/jobrecordhire/jobrecordhire.module#JobRecordHireModule' },
-      ]
-  }
-];
+import { HomeRoutingModule } from '../home-routing.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { JobsComponent } from './jobs/jobs.component';
+import { ProjectsComponent } from './projects/projects.component';
+
+
 
 @NgModule({
   declarations: [
     DashboardComponent,
-   SidebarComponent,
-   HeaderComponent,
-   FooterComponent
+    SidebarComponent,
+    HeaderComponent,
+    FooterComponent,
+    JobsComponent,
+    ProjectsComponent
   ],
-  imports: [ HomeModule, RouterModule.forChild(ROUTES) ],
-  providers: [
-    ScriptService, FlashMessagesService
-  ]
+  imports: [HomeModule, DashboardRoutingModule],
+  providers: [ScriptService, FlashMessagesService]
 })
-
 export class DashboardModule {}
