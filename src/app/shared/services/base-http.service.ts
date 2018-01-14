@@ -86,9 +86,19 @@ export class BaseHttpService {
 
     return this._http
       .put(url, payload, { headers: headers })
-      .map(BaseHttpService.processIsSuccess)
+      .map(BaseHttpService.processSuccess)
       .catch(err => this.processError(err));
   }
+
+  public putData(url: string, payload: any): Observable<any> {
+    const headers = new Headers();
+    this.addHeaders(headers);
+
+    return this._http
+        .put(url, payload, { headers: headers })
+        .map(BaseHttpService.processIsSuccess)
+        .catch(err => this.processError(err));
+}
 
   public delete(url: string) {
     const headers = new Headers();

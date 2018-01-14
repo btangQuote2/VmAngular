@@ -11,6 +11,7 @@ import {
 import { ResetPasswordService } from './components/reset-password/reset-password.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
+import { ForgotUsernameComponent } from './components/forgot-username/forgot-username.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { SharedModule } from '../shared/shared.module';
     MatProgressSpinnerModule,
     LoginRoutingModule
   ],
-  declarations: [routedLoginComponents],
+  declarations: [routedLoginComponents, ForgotUsernameComponent],
   providers: [ResetPasswordService, AuthorizationService]
 })
 export class LoginModule {}
