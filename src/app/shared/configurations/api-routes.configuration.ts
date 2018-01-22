@@ -7,7 +7,15 @@ export const apiRoutes = {
   delete_dashboard: '/api/Dashboard/Delete/',
   put_changePassword: '/users/change-password?',
   put_forgetPassword: '/users/forgot-password?',
-  put_forgetUsername: '/users/forgot-username?'
+  put_forgetUsername: '/users/forgot-username?',
+  post_firstTimeLogin: '/users/firsttime-login?',
+  get_securityQuestion: '/users/security-question/',
+  put_securityQuestion: '/users/security-question-validate/',
+  post_securityQuestion: '/users/security-question/',
+  get_calenders: '/calendars/',
+  get_documentsSearch: '/documents/search/',
+  get_interviewSearch: '/interviews/search/',
+  get_notificationSearch: '/notifications/search/'
 };
 
 export const externalApiRoutes = {

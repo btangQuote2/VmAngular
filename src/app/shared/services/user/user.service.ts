@@ -1,3 +1,4 @@
+import { BaseHttpService } from './../base-http.service';
 import { Injectable, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -10,14 +11,20 @@ import { LocalStorageService } from '../local-storage.service';
 import { User } from '../../../models/domain/User';
 import { NetworkErrorHandler } from '../network-error-handler';
 import { apiRoutes } from '../../configurations/api-routes.configuration';
+import { UserToken } from '../../../models/domain/UserToken';
+import { environment } from '../../../../environments/environment';
+import { Password } from '../../../models/domain/Password';
+import { SecurityQuestion } from '../../../models/domain/SecurityQuestion';
 @Injectable() // extends BaseStore
-export class UserService {
+export class UserService extends BaseHttpService {
+  _route: string;
+
   constructor(
     protected _httpPassthrough: Http,
     protected _errorHandlerPassthrough: NetworkErrorHandler,
     protected _localStoragePassthrough: LocalStorageService<string>
   ) {
-    // super(_httpPassthrough, _errorHandlerPassthrough);
+    super(_httpPassthrough, _errorHandlerPassthrough);
     // this.init(apiRoutes.currentUser);
   }
 
@@ -31,7 +38,47 @@ export class UserService {
   }
 
   getLatest(): Promise<User> {
-   // return this.load();
-   return null;
+    // return this.load();
+    return null;
+  }
+
+  // POST /users/firsttime-login
+  public postFirstTimeLogin(entity: Password): Observable<UserToken> {
+    const paramters = `${entity.newPassword}&${entity.confirmPassword}`;
+
+    this._route = apiRoutes.post_firstTimeLogin + paramters;
+
+    const url = environment.apiUrl + (this._route ? this._route : '');
+
+    return super.post(url, entity);
+  }
+
+  // GET /users/security-question
+  public getSecurityQuestion(entity: Password): Observable<SecurityQuestion[]> {
+    const paramters = `${entity.newPassword}&${entity.confirmPassword}`;
+
+    this._route = apiRoutes.get_securityQuestion + paramters;
+
+    const url = environment.apiUrl + (this._route ? this._route : '');
+
+    return super.post(url, entity);
+  }
+
+  public postSecurityQuestion(entity: Observable<SecurityQuestion[]>): any {
+    // const paramters = `${entity.newPassword}&${entity.confirmPassword}`;
+
+    this._route = apiRoutes.get_securityQuestion;
+
+    const url = environment.apiUrl + (this._route ? this._route : '');
+
+    return super.post(url, entity);
+  }
+
+  public putSecurityQuestion(entity: Observable<SecurityQuestion[]>): any {
+    this._route = apiRoutes.post_securityQuestion;
+
+    const url = environment.apiUrl + (this._route ? this._route : '');
+
+    return super.post(url, entity);
   }
 }
