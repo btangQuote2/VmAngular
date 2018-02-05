@@ -6,6 +6,7 @@ import { NetworkErrorHandler } from '../network-error-handler';
 import { apiRoutes } from '../../configurations/api-routes.configuration';
 import { environment } from '../../../../environments/environment';
 import { Job } from '../../../models/domain/Job';
+import { TodoHire } from '../../../models/domain/TodoHire';
 @Injectable()
 export class TodoManageService extends BaseHttpService {
   _route: string;
@@ -16,7 +17,7 @@ export class TodoManageService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  public get(): Observable<Job[]> {
+  public get(): Observable<TodoHire[]> {
     this._route = apiRoutes.get_todomanage;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);

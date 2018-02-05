@@ -25,7 +25,9 @@ export const apiRoutes = {
   get_utilities: '/api/utilities/search',
   get_todohire: '/api/jobs/todo-hire',
   get_todomanage: 'api/jobs/todo-manage',
-  get_jobsearch: '/api/jobs/search?'
+  get_jobsearch: '/api/jobs/search?',
+  get_job: '/api/jobs/'
+
 };
 
 export const externalApiRoutes = {

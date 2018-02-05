@@ -1,3 +1,4 @@
+import { TodoHire } from './../../../models/domain/TodoHire';
 import { Observable } from 'rxjs/Observable';
 import { BaseHttpService } from '../base-http.service';
 import { Injectable } from '@angular/core';
@@ -16,7 +17,7 @@ export class TodoHireService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  public get(): Observable<Job[]> {
+  public get(): Observable<TodoHire[]> {
     this._route = apiRoutes.get_todohire;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);
