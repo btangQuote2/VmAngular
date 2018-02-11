@@ -48,7 +48,7 @@ export class JobsService extends BaseHttpService {
   public Post(entity: Job): Observable<any> {
     this._route = apiRoutes.get_job;
     const url = environment.apiUrl + (this._route ? this._route : '');
-    return super.put(url, entity);
+    return super.post(url, entity);
   }
 
   /**

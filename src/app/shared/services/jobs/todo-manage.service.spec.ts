@@ -71,7 +71,7 @@ describe('TodoManageService', () => {
     expect(this._enviroment).toBe(enviroment);
   });
 
-  it('should retrieve jobs from the API via GET', () => {
+  it('should retrieve jobs by from the API via GET', () => {
     const url = this._enviroment + this._route;
     const result = service.get().subscribe(todoHires => {
       expect(todoHires.length).toBe(dummyTodoHires.length);
@@ -82,4 +82,6 @@ describe('TodoManageService', () => {
     expect(request.request.method).toBe('GET');
     request.flush(dummyTodoHires);
   });
+
+
 });
