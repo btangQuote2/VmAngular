@@ -20,8 +20,8 @@ export class AssignmentSearchService extends BaseHttpService {
   }
 
   public Search(entity: DateFromTo): Observable<string[]> {
-    const parameters = `${entity.StartDate}` + `/` + `${entity.EndDate}`;
-    this._route = apiRoutes.get_assignmentSearch;
+    const parameters = `start=${entity.StartDate}` + `&` + `end=${entity.EndDate}`;
+    this._route = apiRoutes.get_assignmentSearch + parameters;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);
   }

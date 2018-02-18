@@ -18,7 +18,7 @@ export class CalendersService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  public fromTo(entity: DateFromTo): Observable<Calendar[]> {
+  public Get(entity: DateFromTo): Observable<Calendar[]> {
     const parameters = `${entity.StartDate}` + `/` + `${entity.EndDate}`;
 
     this._route = apiRoutes.get_calenders + parameters;

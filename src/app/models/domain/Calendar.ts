@@ -1,7 +1,7 @@
 export class Calendar {
   CandidateName: string;
-  JobId: 0;
-  AssignmentId: 0;
+  JobId: number;
+  AssignmentId: number;
   EventType: string;
   Date: string;
 }

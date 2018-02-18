@@ -11,26 +11,35 @@ import { environment } from '../../../../environments/environment';
 import { DebugElement } from '@angular/core';
 import { TodoHire } from '../../../models/domain/TodoHire';
 import { DateFromTo } from '../../../models/domain/DateFromTo';
-import { InterviewSearchService } from './interview-search.service';
+import { GlobalService } from './global.service';
+import { Interview } from '../../../models/domain/Interview';
 
 const _route = '/api/languages?';
 const _enviroment = 'https://www.agile1.us/api';
 const _url = '/api/languages?';
 
 describe('GlobalService', () => {
-  let service: InterviewSearchService;
+  let service: GlobalService;
 
-  const dummyCalenders: Calendar[] = [];
+  const dummyInterview: Interview[] = [];
+
+  const interview = new Interview();
+  interview.CandidateName = 'ExtensionRateChange';
+  interview.InterviewId = 0;
+  interview.JobName = '10';
+  interview.Status = '';
+  interview.timeZone = '';
+  dummyInterview.push(interview);
 
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [InterviewSearchService]
+      providers: [GlobalService]
     });
 
-    service = TestBed.get(InterviewSearchService);
+    service = TestBed.get(GlobalService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
@@ -54,15 +63,9 @@ describe('GlobalService', () => {
 
   it('Get', () => {
     const id = 0;
-
-
-
-
-
-
-    const result = service.Get().subscribe((interviews: Interview[]) => {
-      expect(interviews.length).toBe(dummyInterviews.length);
-      expect(interviews).toEqual(dummyInterviews);
+    const dummyString = '';
+    const result = service.Get(id).subscribe((stringResult: string) => {
+      expect(stringResult).toEqual(dummyString);
     });
 
     const request = httpMock.expectOne(`${this._route}`);

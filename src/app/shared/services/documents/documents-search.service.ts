@@ -15,7 +15,7 @@ export class DocumentsSearchService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  public Search(): Observable<string[]> {
+  public Get(): Observable<string[]> {
     this._route = apiRoutes.get_documentsSearch;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);

@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Calendar } from './../../../models/domain/Calendar';
+import { CalendersService } from './calendars.service';
 import { TestBed, inject } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
@@ -11,26 +12,32 @@ import { environment } from '../../../../environments/environment';
 import { DebugElement } from '@angular/core';
 import { TodoHire } from '../../../models/domain/TodoHire';
 import { DateFromTo } from '../../../models/domain/DateFromTo';
-import { InterviewSearchService } from './interview-search.service';
 
-const _route = '/api/languages?';
+const _route = 'api/calendars/';
 const _enviroment = 'https://www.agile1.us/api';
-const _url = '/api/languages?';
 
-describe('GlobalService', () => {
-  let service: InterviewSearchService;
+describe('CalendersService', () => {
+  let service: CalendersService;
 
   const dummyCalenders: Calendar[] = [];
+
+  const calendar = new Calendar();
+  calendar.CandidateName = 'ExtensionRateChange';
+  calendar.JobId = 0;
+  calendar.AssignmentId = 10;
+  calendar.EventType = '';
+  calendar.Date = '';
+  dummyCalenders.push(calendar);
 
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [InterviewSearchService]
+      providers: [CalendersService]
     });
 
-    service = TestBed.get(InterviewSearchService);
+    service = TestBed.get(CalendersService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
@@ -53,20 +60,15 @@ describe('GlobalService', () => {
   });
 
   it('Get', () => {
-    const id = 0;
+    const entity: DateFromTo = new DateFromTo();
 
-
-
-
-
-
-    const result = service.Get().subscribe((interviews: Interview[]) => {
-      expect(interviews.length).toBe(dummyInterviews.length);
-      expect(interviews).toEqual(dummyInterviews);
+    const result = service.Get(entity).subscribe(calenders => {
+      expect(calenders.length).toBe(dummyCalenders.length);
+      expect(calenders).toEqual(dummyCalenders);
     });
 
     const request = httpMock.expectOne(`${this._route}`);
     expect(request.request.method).toBe('GET');
-    request.flush(dummyString);
+    request.flush(dummyCalenders);
   });
 });

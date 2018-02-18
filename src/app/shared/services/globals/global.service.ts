@@ -22,8 +22,8 @@ export class GlobalService extends BaseHttpService {
   /**
    * Get
    id:number   */
-  public Get(id: number) {
-    const parameters = `ClintId=${id}`;
+  public Get(id: number): Observable<string> {
+    const parameters = `clientId=${id}`;
     this._route = apiRoutes.get_languages + parameters;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);

@@ -16,7 +16,7 @@ export class InterviewSearchService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  public Search(): Observable<Interview[]> {
+  public Get(): Observable<Interview[]> {
     this._route = apiRoutes.get_interviewSearch;
     const url = environment.apiUrl + (this._route ? this._route : '');
     return super.get(url);

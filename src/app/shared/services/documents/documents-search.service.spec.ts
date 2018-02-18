@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Calendar } from './../../../models/domain/Calendar';
+import { CalendersService } from './calendars.service';
 import { TestBed, inject } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
@@ -11,26 +12,34 @@ import { environment } from '../../../../environments/environment';
 import { DebugElement } from '@angular/core';
 import { TodoHire } from '../../../models/domain/TodoHire';
 import { DateFromTo } from '../../../models/domain/DateFromTo';
-import { InterviewSearchService } from './interview-search.service';
+import { DocumentsSearchService } from './documents-search.service';
 
-const _route = '/api/languages?';
+const _route = 'api/jobs/todo-manage';
 const _enviroment = 'https://www.agile1.us/api';
-const _url = '/api/languages?';
+const _url = 'api/calendars/';
 
-describe('GlobalService', () => {
-  let service: InterviewSearchService;
+describe('DocumentsSearchService', () => {
+  let service: DocumentsSearchService;
 
   const dummyCalenders: Calendar[] = [];
+
+  const calendar = new Calendar();
+  calendar.CandidateName = 'ExtensionRateChange';
+  calendar.JobId = 0;
+  calendar.AssignmentId = 10;
+  calendar.EventType = '';
+  calendar.Date = '';
+  dummyCalenders.push(calendar);
 
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [InterviewSearchService]
+      providers: [DocumentsSearchService]
     });
 
-    service = TestBed.get(InterviewSearchService);
+    service = TestBed.get(CalendersService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
@@ -53,19 +62,13 @@ describe('GlobalService', () => {
   });
 
   it('Get', () => {
-    const id = 0;
-
-
-
-
-
-
-    const result = service.Get().subscribe((interviews: Interview[]) => {
-      expect(interviews.length).toBe(dummyInterviews.length);
-      expect(interviews).toEqual(dummyInterviews);
+    const dummyString: string[] = [];
+    const result = service.Get().subscribe((stringResult: string[]) => {
+      expect(stringResult.length).toBe(dummyString.length);
+      expect(dummyString).toEqual(dummyString);
     });
 
-    const request = httpMock.expectOne(`${this._route}`);
+    const request = httpMock.expectOne(`${this._url}`);
     expect(request.request.method).toBe('GET');
     request.flush(dummyString);
   });
