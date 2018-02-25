@@ -12,26 +12,27 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    this.scriptService.load(
-      'commonJS',
-      'utilsJS',
-      'indexJS',
-      'nav-barJS',
-      'bannerJS',
-  //    'dashIndexJS',
- //     'dashCalJS',
-      'vendorMomentMinJS',
-      'vendorMomentTZJS',
-      'vendorCalJS',
-      'vendorJqueryTouchJS',
-      'vendorAddToCalJS',
-      'mdb-minJS',
-      'vendorPerfScrollbarJS',
-      'vendorSlickMinJS')
+//     this.scriptService.load(
+//       'jqLibJS',
+//       'commonJS',
+//       'utilsJS',
+//       'indexJS',
+//       'nav-barJS',
+//       'bannerJS',
+//   //    'dashIndexJS',
+//  //     'dashCalJS',
+//       'vendorMomentMinJS',
+//       'vendorMomentTZJS',
+//       'vendorCalJS',
+//       'vendorJqueryTouchJS',
+//       'vendorAddToCalJS',
+//       'mdb-minJS',
+//       'vendorPerfScrollbarJS',
+//       'vendorSlickMinJS')
 
-      .then(data => {
-      console.log('script loaded ', data);
-    }).catch(error => console.log(error));
-  }
+//       .then(data => {
+//       console.log('script loaded ', data);
+//     }).catch(error => console.log(error));
+   }
 
 }

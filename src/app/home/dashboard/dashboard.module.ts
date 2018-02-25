@@ -16,6 +16,7 @@ import { HomeRoutingModule } from '../home-routing.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { JobsComponent } from './jobs/jobs.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -26,7 +27,8 @@ import { ProjectsComponent } from './projects/projects.component';
     HeaderComponent,
     FooterComponent,
     JobsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SidenavComponent
   ],
   imports: [HomeModule, DashboardRoutingModule],
   providers: [ScriptService, FlashMessagesService]

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>VMSAngular</title>
@@ -7,23 +8,82 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Material Design Webfont -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/e0a279c4-4551-4d17-ac90-3dcc71490738.css"/>
-    <!-- Material Design -->
-    <!-- <link href="../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet"> -->
+  <!-- Material Design Webfont -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/e0a279c4-4551-4d17-ac90-3dcc71490738.css" />
+  <!-- Material Design -->
+  <!-- <link href="../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet"> -->
 
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 </head>
+
 <body>
   <app-root>
     Loading...
   </app-root>
 </body>
-<script
-src="https://code.jquery.com/jquery-3.2.1.js"
-integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script> -->
+<!--
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+
+<!--
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<!--
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+
+    $(".dropdown-toggle").dropdown();
+
+    $('.button-left').click(function () {
+      $('.sidebar').toggleClass('fliph');
+    });
+
+  });
+  //   $(document).ready(function () {
+  //     $(".dropdown-toggle").dropdown();
+
+  //     htmlbodyHeightUpdate();
+  //     $(window).resize(function () {
+  //         htmlbodyHeightUpdate();
+  //     });
+  //     $(window).scroll(function () {
+  //         height2 = $('.container-main').height();
+  //         htmlbodyHeightUpdate();
+  //     });
+  //   });
+
+
+  // function htmlbodyHeightUpdate() {
+  //     var height3 = $(window).height();
+  //     var height1 = $('.nav').height() + 50;
+  //     height2 = $('.container-main').height();
+  //     if (height2 > height3) {
+  //         $('html').height(Math.max(height1, height3, height2) + 10);
+  //         $('body').height(Math.max(height1, height3, height2) + 10);
+  //     } else
+  //     {
+  //         $('html').height(Math.max(height1, height3, height2));
+  //         $('body').height(Math.max(height1, height3, height2));
+  //     }
+
+  // }
+
+</script>
 
 </html>

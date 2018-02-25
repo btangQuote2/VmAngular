@@ -1,26 +1,39 @@
-
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="z-index:999">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="z-index:999; height:50px;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#"><img src="./assets/img/accel-logo-teal.svg" alt="Acceleration Suite" class="accel-logo" /></a>
-  <div class="collapse navbar-collapse" id="navbarText">
+
+  <a class="navbar-brand" href="#">
+    <img src="./assets/img/accel-logo-teal.svg" style="margin-top:-17px" alt="Acceleration Suite" class="accel-logo">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarText" style="margin-top:-17px">
     <ul class="navbar-nav mr-auto">
       <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li> -->
+
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link"   routerLink="/dashboard/data"  >Dashboard <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/dashboard/data" style="margin-top: 13px">
+          Dashboard
+
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
+
       <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/dashboard/jobrecordhire" class="nav-link"  >Menu 1</a>
+        <a routerLink="/company/jobrecordhire" class="nav-link" style="margin-top: 13px">Menu1</a>
       </li>
+
+
       <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/dashboard/nodata" class="nav-link"  >Menu 2</a>
+        <a routerLink="/dashboard/nodata" class="nav-link" style="margin-top: 13px">Menu 2</a>
       </li>
     </ul>
-    <span class="navbar-text"  >
-      <a href="javascript:void(0)" (click)="Logout()" style="color:brown"><i class="fa fa-power-off"></i> Logout</a>
+
+    <span class="navbar-text pull-right"   >
+      <a href="javascript:void(0)"   (click)="Logout()" style="color:brown"><i class="fa fa-power-off" style="margin-top:10px"></i> Logout</a>
     </span>
   </div>
 </nav>
