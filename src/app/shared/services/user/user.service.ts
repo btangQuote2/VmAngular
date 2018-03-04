@@ -31,7 +31,6 @@ export class UserService extends BaseHttpService {
   get currentUserInfo$(): Observable<User> {
     // TODO: Change how service is provided so the init call can be moved to the constructor.
     // Currently provided in App, but the Token isn't set so the init fould fail and produce an empty entity$
-
     //    return this._entity$.asObservable() as Observable<User>;
 
     return null;
@@ -61,7 +60,7 @@ export class UserService extends BaseHttpService {
 
     const url = environment.apiUrl + (this._route ? this._route : '');
 
-    return super.post(url, entity);
+    return super.post(url, entity) as  Observable<SecurityQuestion[]>;
   }
 
   public postSecurityQuestion(entity: Observable<SecurityQuestion[]>): any {

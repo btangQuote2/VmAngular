@@ -18,19 +18,6 @@ export class PermissionsService {
     // this.init(apiRoutes.permissions, true);
   }
 
-  public getLatest(): Promise<Permissions> {
-    //   return this.load()
-    //       .then((response) => {
-
-    //           if (!response || !response['Value'] || !response['Value']['Permissions']) { return; }
-
-    //           const permissions = new Permissions(response['Value']['Permissions']);
-
-    //           return permissions;
-    //       })
-
-    return null;
-  }
 
   get permissions$(): Observable<Permissions> {
     return this._entity$.map(json => {

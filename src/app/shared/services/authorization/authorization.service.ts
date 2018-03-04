@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { apiRoutes } from '../../configurations/api-routes.configuration';
 import { AuthorizationResponse } from '../../../models/response/authorization-response';
 import { NetworkErrorHandler } from '../network-error-handler';
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthorizationService extends BaseHttpService {
   constructor(
@@ -14,16 +15,18 @@ export class AuthorizationService extends BaseHttpService {
     super(_httpPassthrough, _errorHandler);
   }
 
-  getPermssions() {
+  getPermssions(): Observable<AuthorizationResponse> {
     const url = environment.apiUrl + apiRoutes.authorization;
 
-    return super.get(url).subscribe(
-      data => {
-        console.log('getPermsions response', <AuthorizationResponse>data);
-      },
-      error => {
-        console.log('error');
-      }
-    );
+    // return super.get(url).subscribe(
+    //   data => {
+    //     console.log('getPermsions response', <AuthorizationResponse>data);
+    //   },
+    //   error => {
+    //     console.log('error');
+    //   }
+    // );
+
+    return super.get(url);
   }
 }
